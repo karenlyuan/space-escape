@@ -30,8 +30,18 @@ import javax.swing.Timer;
 
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	
+	int score1 = 0;
+	int score2 = 0;
+	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
+		
+		Font c = new Font("Helvetica", Font.BOLD, 70);
+		g.setFont(c);
+		g.setColor(new Color(255,255,255));
+		g.drawString(score1+"", 220, 500);
+		g.setColor(new Color(255,255,255));
+		g.drawString(score2+"", 630, 500);
 		
 	}
 	
@@ -53,6 +63,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
 		
+		BufferedImage cursorImg;
+		try {
+			cursorImg =  ImageIO.read(new File("aiming-cursor.png"));
+			Cursor blankCursor = Toolkit.getDefaultToolkit().createCustomCursor(
+				    cursorImg, new Point(0, 0), "blank cursor");
+			f.getContentPane().setCursor(blankCursor);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 	}
 	
