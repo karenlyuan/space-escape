@@ -16,7 +16,7 @@ import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
-public class Background{
+public class Background {
 	
 	//add location attributes
 	private int x, y; //position of the bird
@@ -28,7 +28,7 @@ public class Background{
 
 	
 	public Background(int x, int y) {
-		background = getImage("black-image.jpg");
+		background = getImage("/imgs/rocket-transparent.png");
 		this.x = x;
 		this.y = y;
 
@@ -48,14 +48,9 @@ public class Background{
 		g3.drawImage(background, tx, null);
 	}
 	
-	public void update() {
-		tx.setToTranslation(x, y);
-		tx.scale(.1, .1);
-	}
-	
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
-		tx.scale(1, 1);
+		tx.scale(1,1);
 	}
 
 	private Image getImage(String path) {

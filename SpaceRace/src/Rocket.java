@@ -68,12 +68,12 @@ public class Rocket {
 	public void update() {
 		tx.setToTranslation(x1, y1);
 		tx.setToTranslation(x2, y2);
-		tx.scale(0.1, 0.1);
+		tx.scale(0.001, 0.001);
 	}
 	
 	private static void init(double a, double b) {
 		tx.setToTranslation(a, b);
-		tx.scale(1, 1);
+		tx.scale(0.001, 0.001);
 	}
 
 	public static Image getImage(String path) {
