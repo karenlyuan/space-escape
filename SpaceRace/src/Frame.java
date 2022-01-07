@@ -39,6 +39,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		super.paintComponent(g);
 		bkgrd.paint(g);
 		
+		
 		Font c = new Font("Helvetica", Font.BOLD, 70);
 		g.setFont(c);
 		g.setColor(new Color(255,255,255));
