@@ -27,6 +27,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+//game reference: https://dev.to/lukegarrigan/top-5-best-games-to-code-as-a-beginner-9n
 
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	
@@ -146,19 +147,19 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//down arrow = 40
 		
 		if(m.getKeyCode() == 87) {
-			Rocket.y1--;
+			Rocket.y1 -= 5;
 		}
 		
 		if(m.getKeyCode() == 83) {
-			Rocket.y1++;
+			Rocket.y1 += 5;
 		}
 		
 		if(m.getKeyCode() == 38) {
-			Rocket.y2--;
+			Rocket.y2 -= 5;
 		}
 		
 		if(m.getKeyCode() == 40) {
-			Rocket.y2++;
+			Rocket.y2 += 5;
 		}
 		
 	}
