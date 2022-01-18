@@ -1,7 +1,6 @@
-
 /*
 Notes for project:
-- use previous projects as templates for classes! (duck-hunt, pong)
+- use previous projects as templates for classes! (duck-hunt, pong, agar.io)
 - use own assets for game (pictures and sounds)
 - find graphics or create them
 
@@ -32,6 +31,7 @@ public class Background {
 		this.x = x;
 		this.y = y;
 
+		
 		tx = AffineTransform.getTranslateInstance(x, y);
 		init(x, y); 				//initialize the location of the image
 									//use your variables
