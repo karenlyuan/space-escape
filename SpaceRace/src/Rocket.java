@@ -28,7 +28,7 @@ public class Rocket {
 
 	public Rocket() {
 		
-		img = getImage("rocket-transparent");
+		img = getImage("/imgs/SpaceShipWhite.jpg");
 		
 		tx = AffineTransform.getTranslateInstance(x1, y1);
 		
@@ -88,11 +88,59 @@ public class Rocket {
 	}
 
 	public static void reset() {
-		img = getImage("rocket-transparent");
+		img = getImage("/imgs/SpaceShipWhite.jpg");
 		
 		tx = AffineTransform.getTranslateInstance(x1, y1);
 		init(x1, y1);
 		init(x2, y2);
+	}
+	
+	public static int getX1() {
+		return x1;
+	}
+
+	public static void setX1(int x1) {
+		Rocket.x1 = x1;
+	}
+
+	public static int getY1() {
+		return y1;
+	}
+
+	public static void setY1(int y1) {
+		Rocket.y1 = y1;
+	}
+
+	public static int getX2() {
+		return x2;
+	}
+
+	public static void setX2(int x2) {
+		Rocket.x2 = x2;
+	}
+
+	public static int getY2() {
+		return y2;
+	}
+
+	public static void setY2(int y2) {
+		Rocket.y2 = y2;
+	}
+
+	public static double getSpeedX() {
+		return speedX;
+	}
+
+	public static void setSpeedX(double speedX) {
+		Rocket.speedX = speedX;
+	}
+
+	public static double getSpeedY() {
+		return speedY;
+	}
+
+	public static void setSpeedY(double speedY) {
+		Rocket.speedY = speedY;
 	}
 
 }
