@@ -35,36 +35,32 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	int score2 = 0;
 	
 	Background bkgrd = new Background(0,0);
+	Asteroid myAsteroid = new Asteroid(100, 100);
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		bkgrd.paint(g);
+		myAsteroid.Paint(g);
 		
 		
 		Font c = new Font("Helvetica", Font.BOLD, 70);
 		g.setFont(c);
 		g.setColor(new Color(255,255,255));
 		g.drawString(score1+"", 220, 500);
-		g.setColor(new Color(255,255,255));
-		g.drawString(score2+"", 630, 500);
 		
 		if(Rocket.y1 == 0) {
 			score1++;
 		}
 		
-		if(Rocket.y2 == 0) {
-			score2++;
-		}
-		
-		if(score1 == 5 || score2 == 5) {
+		if(score1 == 5) {
 			//set screen to the game over screen
 			//over.paint(g);
-			if(score1 > score2) {
+			/*if(score1 > score2) {
 				g.drawString("Player 1 Wins!", 420, 270);
 			}
 			if(score2 > score1) {
 				g.drawString("Player 2 Wins!", 420, 270);
-			}
+			} */
 		}
 		
 	}
@@ -152,14 +148,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		if(m.getKeyCode() == 83) {
 			Rocket.y1 += 5;
-		}
-		
-		if(m.getKeyCode() == 38) {
-			Rocket.y2 -= 5;
-		}
-		
-		if(m.getKeyCode() == 40) {
-			Rocket.y2 += 5;
 		}
 		
 	}
