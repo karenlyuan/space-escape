@@ -13,10 +13,6 @@ public class Rocket {
 	public static int x1 = 220;
 	public static int y1 = 145;
 	
-	//location attributes for right rocket
-	public static int x2 = 680;
-	public static int y2 = 145;
-	
 	private int length, width; //size
 	public static double speedX = 5;
 	public static double speedY = 5;
@@ -33,15 +29,12 @@ public class Rocket {
 		tx = AffineTransform.getTranslateInstance(x1, y1);
 		
 		init(x1, y1); 				//initialize the location of the image
-										//use your variables
-		init(x2, y2);
-		
+										//use your variables		
 	}
 	
 	public void changePicture(String newFileName) {
 		img = getImage(newFileName);
 		init(x1, y1);
-		init(x2, y2);
 		
 	}
 	
@@ -65,9 +58,21 @@ public class Rocket {
 
 	}
 	
+	public void Collide(Asteroid a) {
+		
+		//if robot collides with an Asteroid
+		
+		if(x1 >= a.getX() && x1 <= a.getX() + width) {
+			x1 = 220;
+		}
+		if(y1 >= a.getY() && y1 <= a.getX() + width) {
+			y1 = 145;
+		}
+		
+	}
+	
 	public void update() {
 		tx.setToTranslation(x1, y1);
-		tx.setToTranslation(x2, y2);
 		tx.scale(0.001, 0.001);
 	}
 	
@@ -92,7 +97,6 @@ public class Rocket {
 		
 		tx = AffineTransform.getTranslateInstance(x1, y1);
 		init(x1, y1);
-		init(x2, y2);
 	}
 	
 	public static int getX1() {
@@ -109,22 +113,6 @@ public class Rocket {
 
 	public static void setY1(int y1) {
 		Rocket.y1 = y1;
-	}
-
-	public static int getX2() {
-		return x2;
-	}
-
-	public static void setX2(int x2) {
-		Rocket.x2 = x2;
-	}
-
-	public static int getY2() {
-		return y2;
-	}
-
-	public static void setY2(int y2) {
-		Rocket.y2 = y2;
 	}
 
 	public static double getSpeedX() {
