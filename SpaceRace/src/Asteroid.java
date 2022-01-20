@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 public class Asteroid {
 	
@@ -10,14 +11,13 @@ public class Asteroid {
 	private Color color;
 	private double area; //helps with width calculation
 							//as we consume other cells
+	private ArrayList<Asteroid> asteroids = new ArrayList<Asteroid>();
 	
 	
 	public Asteroid(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
-	
-	Asteroid myAsteroid = new Asteroid(100, 100);
 	
 	public Asteroid() {
 		width = 10;
@@ -30,26 +30,31 @@ public class Asteroid {
 	}
 	
 	public void Paint(Graphics g) {
+		g.setColor(Color.white);
+		g.fillOval(x, y, width, width);
+		
+		for(Asteroid thisAsteroid: asteroids) {
+			thisAsteroid.Paint(g);
+		}
+		
 		x-=vx;
 		g.setColor(color);
 		g.fillOval(x,y,width,width);
 	}
 	
-	public boolean Collide(Asteroid a) {
+	 /*public void Collide(Asteroid a) {
 		
 		//if robot collides with an Asteroid
 		
 		if(a.getX() + width >= Rocket.getX1() && a.getX() - width <= Rocket.getX1()
 				&& a.getY() + width >= Rocket.getY1() && a.getY() - width <= Rocket.getY1()) {
-			return true;
-		} else if(a.getX() + width >= Rocket.getX2() && a.getY() - width <= Rocket.getX2()
-				&& a.getY() + width >= Rocket.getY1() && a.getY() - width <= Rocket.getY1()) {
-			return true;
+			Rocket.x1 = 220;
 		} else {
-			return false;
+			
 		}
 		
 	}
+	 */
 	
 	//getter
 	public int getX() {
