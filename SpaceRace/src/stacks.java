@@ -39,7 +39,7 @@ public class Stack<T> {
 		
 		//Add lines of code to test if implementation
 		// of Stack works
-		//System.out.println(data.toString());
+		System.out.println(data);
 		
 	}
 	
