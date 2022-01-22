@@ -58,3 +58,76 @@ public class Queue<T> {
 	}
 
 }
+
+/*
+MY STUDYCS SOLUTION
+
+//For this problem, you may assume you can use the Stack we started together in class
+public class Queue<T>{
+
+    //instance vars to be added by student
+    private Stack<T> a, b;
+	private int size;
+
+    //constructor to be added by student
+    public Queue() {
+		a = new Stack<T>(); //in stack
+		b = new Stack<T>(); //out stack
+		size = 0;
+	}
+	
+    //remove and return the element at the beginning of the list
+    public T remove(){
+        int i = 0; //index
+		
+		
+		if(b.size() == 1) {
+		    size--;
+		    return b.pop();
+		}
+		else if(b.size() > 1) {
+			//while(i<b.size()) {
+			    size--;
+			    //b.pop is last in, first out
+			    //need to return first in, first out
+			    b.pop();
+			    b.pop();
+				return b.pop();
+				//i++;
+			//}
+		} else if (b.size() == 0) {
+		    size = 0;
+		    return null;
+		} else /*(a.size() > 0)*/ {
+		    i = 0;
+			while(i<a.size()) {
+				b.push(a.pop());
+				i++;
+				//size--;
+				//remove();
+			}
+			size--;
+			return b.pop();
+		}
+    }
+
+    //add element at the end of the list
+    public void add(T el){
+        b.push(el);
+		size++;
+    }
+
+    //return a String representation of the list
+    //formatted as [el1, el2, el3, ..., elN]
+    public String toString(){
+        return "";
+    }
+
+
+    public int size(){
+      return size;
+    }
+
+}
+
+*/
