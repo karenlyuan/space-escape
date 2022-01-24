@@ -18,7 +18,7 @@ public class Stack<T> {
 	
 	//push - add element to list
 	public void push(T el) {
-		data.add(el);
+		data.add(0, el);
 		size += 1; //update size
 	}
 	
