@@ -20,6 +20,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
@@ -34,11 +35,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	int score1 = 0;
 	int score2 = 0;
 	
+	private ArrayList<Asteroid> asteroids = new ArrayList<Asteroid>();
+	
 	Background bkgrd = new Background(0,0);
 	Asteroid myAsteroid = new Asteroid(100, 100);
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
+		g.setColor(Color.black);
+		g.fillRect(0,0,1000,1000);
 		bkgrd.paint(g);
 		myAsteroid.Paint(g);
 		
@@ -62,6 +67,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				g.drawString("Player 2 Wins!", 420, 270);
 			} */
 		}
+		
+		g.setColor(Color.white);
+		for(Asteroid a: asteroids) {
+			a.Paint(g);
+		}
+		
 		
 	}
 	
