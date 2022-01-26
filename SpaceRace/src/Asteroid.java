@@ -44,17 +44,14 @@ public class Asteroid {
 	
 	 /*public void Collide(Asteroid a) {
 		
-		//if robot collides with an Asteroid
+		//if rocket collides with an Asteroid
 		
 		if(a.getX() + width >= Rocket.getX1() && a.getX() - width <= Rocket.getX1()
 				&& a.getY() + width >= Rocket.getY1() && a.getY() - width <= Rocket.getY1()) {
-			Rocket.x1 = 220;
-		} else {
-			
+			Rocket.x1 = 100;
 		}
-		
-	}
-	 */
+	} */
+	
 	
 	//getter
 	public int getX() {
