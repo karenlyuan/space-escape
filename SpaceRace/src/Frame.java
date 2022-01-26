@@ -153,12 +153,20 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//up arrow = 38
 		//down arrow = 40
 		
-		if(m.getKeyCode() == 87) {
+		if(m.getKeyCode() == 38) {
 			Rocket.y1 -= 5;
 		}
 		
-		if(m.getKeyCode() == 83) {
+		if(m.getKeyCode() == 40) {
 			Rocket.y1 += 5;
+		}
+		
+		if(m.getKeyCode() == 39) {
+			Rocket.x1 += 5;
+		}
+		
+		if(m.getKeyCode() == 37) {
+			Rocket.x1 -= 5;
 		}
 		
 	}
