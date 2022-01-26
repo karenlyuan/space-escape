@@ -48,7 +48,7 @@ public class Rocket {
 		
 		update();
 				
-		if (x1 <= -75 || x1 >= 780) {
+		if (x1 <= 50 || x1 >= 850) {
 			speedX *= -1;
 		}
 		
